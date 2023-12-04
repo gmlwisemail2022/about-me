@@ -1,0 +1,437 @@
+/* Layout Reference 
+About Me page is divided into X sections:
+1. Navigation
+2. About Me (Profile Summary)
+3. Skills
+4. Experiences
+5. My Hobbies
+6. Photo Gallery
+7. Index
+*/
+
+/* general styles starts here*/
+
+body {
+
+   background-image: url("logo/background2.jpg");
+}
+
+
+.halfPage1 {
+    background-color: rgb(221, 219, 219); 
+    opacity: 0.9;
+}
+
+
+.halfPage2 {
+    background-color: whitesmoke; 
+    opacity: 0.8;
+}
+
+.mainHead {
+    color: skyblue;
+    font-weight: bolder;
+    font-size: 80px;
+}
+
+
+.sectionHead {
+    color: antiquewhite;  /* Note: there is a blue color override embedded in html for skills and experience sections */
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: "Times New Roman";
+    font-style: italic;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+
+.padding {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.padding2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: inline-block;
+}
+
+
+/* About Me section starts here*/
+.aboutMeMain {
+    display: flex;
+    flex-direction: column;
+    height: 1800px;
+    min-width: 0;
+
+}
+
+
+.sectionFlex {
+    display: inline-flex;
+    height: 26%;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+/*
+.section2 {
+    display: inline-flex;
+    height: 24%;
+    width: 100%
+}
+*/
+.sub-section1 {
+    background-color: rgb(226, 228, 230); 
+    padding: 2%;
+    justify-content: center;
+    text-emphasis-position: center;
+    width: 70%;
+    box-sizing: border-box;
+    font-size: min(1.8em, 3vw);
+    min-width: 0;
+    flex: 1 1 0;
+}
+.sub-section2 {
+    background-color: rgb(65, 146, 226);    
+    width: 30%;
+    position: relative;
+    border: 5px solid black;
+    justify-content:center;
+    box-sizing: border-box;
+}
+
+
+.aboutMeText {
+    text-align: center;
+    font-size: x-large;
+    position: relative;
+    display: block; 
+}
+
+
+.aboutMePix {
+    height: 80%;
+    width: 80%;
+    left :10%;
+    object-fit: cover;
+    margin-bottom: 10%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/* Skills section starts here*/
+
+
+/* skills bar testing */
+.chart-wrap {
+    width: 300px;
+    height: 300px;
+    font-family:sans-serif;
+  }
+
+  .grid{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    border-bottom:2px solid #35f16d;
+
+  } 
+    
+  .bar {
+    background-color:#52a4c7;
+    color: rgb(17, 16, 16);
+    width: 80px;
+    height: var(--bar-value);
+    align-self:flex-end;
+    border-radius:3px 3px 0 0;
+    position:relative;
+    font-weight: bold;
+    font-size: large;
+  }  
+    
+  .bar:hover {
+    opacity: 0.7;
+  }
+      
+
+.skillsMain {
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.skillsLabel
+{
+    display: inline-flex;
+    width: 17%;
+    font-size: larger;
+    text-align: justify;
+    direction:rtl;
+    text-decoration:underline; 
+    font-weight: bold;
+    /* background-color: silver; */
+}
+
+.skillsBox1
+{
+    position: relative;
+    display: inline-flex;
+    width: 25%;
+    height: auto;
+    border: 5px solid black;
+    border-radius: 5px;
+    /* background-color: silver; */
+    padding: 5px;
+}
+
+li {
+    border-right: 1px solid #742323;
+  }
+
+
+
+.skillList {
+    width: fit-content;
+    font-size: medium;
+    box-sizing: border-box;
+    /* background-color: silver; */
+}
+
+
+.skillsPad
+{
+    display: inline-flex;
+    width: 10%;
+    /* background-color: antiquewhite; */
+}
+
+/* Experiences section starts here*/
+
+
+.companyWork {
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;  
+    border: 5px dotted gray;
+
+}
+
+
+.experienceLabel
+{
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+}
+
+.multi-logo {
+    width: 20%;
+    background-color: rgb(206, 206, 210);
+}
+
+/* css for image inside the outer box */
+
+.skillsSet {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.relative-img-out {
+    width: 50%;
+    left: 2%;
+    height: 160px;
+    position: relative;
+    border-radius: 20%;
+    border: 3px dotted black;
+    box-sizing: border-box;
+    
+}
+
+.relative-img-out2 {
+    width: 40%;
+    left: 2%;
+    height: 160px;
+    position: relative;
+    border-radius: 20%;
+    border: 3px dotted black;
+    box-sizing: border-box;
+    
+}
+
+.relative-img-in {
+    width: 80%;
+    height: 90%;
+    margin-top: 1%; 
+    margin-left: 10%;
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    /* transform: translate(-50%, -50%); /* translate box by -% to center and avoid overflow of inner box to outside outer box*/
+}
+
+.border-text {
+    font: 15pt/0 'Averia Serif Libre'; 
+    font-size:larger;
+    margin: auto; /* to center */
+    padding: auto; 
+    /* padding: 0 4px; */
+  }
+
+
+.comp-logo {
+    object-fit: fill;
+    width: 95%;
+    height: 95%;
+}
+
+#div {
+    display:inline-block;
+    height: 350px;
+    position: relative;
+    font-size: x-large;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    width: 80%;
+    border: 10px solid black;
+    background-color: rgb(244, 237, 237);
+}
+
+
+/* hobbies section below */
+
+.hobbiesSet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hobbiesHidden
+{
+    width: 10%;
+    direction:rtl;
+    /* background-color: antiquewhite; */
+}
+
+
+.hobbiesOutBox {
+    width: 20%;
+    left: 2%;
+    height: 15%;
+    position: relative;
+    border-radius: 15px 50px;
+    background-color: rgb(0, 139, 28);
+    border: 5px solid black;
+    box-sizing: border-box;
+
+}
+
+
+.hobbiesPix {
+    object-fit: fill;
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
+
+.hobbiesPix:hover {
+    border-radius: 10px;
+    transform: scale(1.2);
+}
+
+.hobbiesText {
+    text-align: center;
+    font-size: x-large;
+    font-family: cursive;
+}
+
+/* my photos section starts here: */
+
+.galleryMain {
+    display: grid;
+    width: 80%;
+    margin-left: 5%;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 5vw);
+    border: 2px solid black;
+}
+
+.galleryPix {
+    width: 100%;
+    height: 100%;
+    object-fit: fit;    /*resize images to fit the container */
+    /* object-fit: cover <<< truncated mages images does not resize */
+    display: block; 
+}
+
+.galleryPix:hover {
+    border-radius: 10px;
+    transform: scale(1.5);
+    object-fit: fill;
+}
+
+
+.gallery1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-right: -35px;
+    margin-bottom: -10px;   
+}
+
+
+.gallery2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    margin-right: -35px;
+    margin-bottom: -10px;  
+}
+
+.gallery3 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    margin-bottom: -10px;  
+}
+
+.gallery4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    margin-right: -35px; 
+    margin-bottom: -10px;  
+}
+
+.gallery5 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 11;
+    margin-right: -35px;
+  }
+  
+  .gallery6 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 11;
+  }
+
+
