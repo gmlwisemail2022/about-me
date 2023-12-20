@@ -1,0 +1,378 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   Eric Meyer Reset
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Above this point is the Eric Meyer Reset, only edit below this point */
+
+/* sets up the animation of the cursor. it rotates in a circle and grows and shrinks in the middle */
+@keyframes rotate {
+    /* the 0deg to 360deg causes the circle */
+    from {
+        rotate: 0deg;
+    }
+    /* this is the grow/shrink effect */
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+/* circle that follows users cursor */
+#cursor {
+    /* sets the height, quite large because if the cursor loses the circle then it gets stuck */
+    height: 700px;
+    /* a-r just sets width the same as height */
+    aspect-ratio: 1;
+    /* possibly change to fixed */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    /* adds a circle */
+    border-radius: 50%;
+    /* change the 2 colours of the blur */
+    background: linear-gradient(
+        to right, 
+        aquamarine,
+        mediumpurple
+    );
+    /* adds the animation we made above */
+    animation: rotate 20s infinite;
+
+    /* /* REMOVED FOR THE BLUE EFFECT, might put back, depends on how it performs  */
+    filter: blur(200px); 
+}
+
+/* makes the div the whole height and width of the screen and then blurs ir  */
+#blur-effect-for-cursor {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* z-index is the stack level of the div */
+    z-index: 2;
+    backdrop-filter: blur(200px);
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* header background color and location of items */
+header {
+display: flex;
+justify-content: space-between; 
+align-items: center;
+padding: 0;
+margin: 0;
+background-color: rgba(0, 0, 0, 0.85);
+width: 100%;
+
+}
+
+header h1 {
+	font-family: 'Kanit', sans-serif;
+	padding: 20px;
+	font-size: 24px;
+	color: white;
+}
+
+header ul {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+}
+
+header li {
+	/* adds a space between icons */
+	margin-right: 1em;
+	/* stops items from disappearing */
+	flex-wrap: wrap;
+
+}
+
+#github:hover {
+	/* adds a grey background color when hovering */
+	background-color: rgba(255, 255, 255, 0.328);
+	/* rounds the corners of the hover effect */
+	border-radius: 5px;
+}
+
+#linkedIn:hover {
+	/* adds LinkedIn blue background color when hovering */
+	background-color: rgb(0, 119, 181);
+	/* rounds the corners when hovering */
+	border-radius: 5px;
+}
+
+/*  ! background image css, takes up whole width */
+#fullWidthImage img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0;
+	padding: 0%;
+}
+
+/* change fundamentals of about me section here */
+.aboutMe {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: rgba(255, 255, 255, 0.875);
+	width: 100%;
+	height: auto;
+	/* padding to add space to other sections */
+	padding-top: 40px;
+	padding-bottom: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* change font of h2 in about me section here */
+.aboutMe h2 {
+	font-family: 'Kanit', sans-serif;
+}
+
+/* ! stops about me section touching the borders */
+.aboutMeP {
+	width: 80%;
+}
+
+/* adds an underline and changes link colour back to white */
+.aboutMeP a {
+	color: rgba(255, 255, 255, 0.875);
+	text-decoration: underline;
+}
+
+/* adds a pink hover effect */
+.aboutMeP a:hover {
+	color: hotpink;
+}
+
+.projectsH2 {
+	background-color: rgba(0, 0, 0, 0.85);
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	color: rgba(255, 255, 255, 0.875);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Kanit', sans-serif;
+}
+
+.projectsH2Manipulation {
+	width: 80%;
+
+}
+
+.projects {
+	background-color: rgba(0, 0, 0, 0.85);
+	width: 100%;
+	height: auto;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	color: rgba(255, 255, 255, 0.875);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Kanit', sans-serif;
+}
+
+/* creates flex around boxes within the project flex */
+.projectsBoxes {
+	width: 90%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+	gap: 1em;
+
+}
+
+/* alters the individual boxes in project section */
+.project-box {
+	box-shadow: 0px 0px 10px 2px grey;
+	height: 150px;
+	width: 150px;
+	border: solid;
+	border-width: 2px;
+	border-color: rgba(255, 255, 255, 0.503);;
+	text-decoration: underline;
+}
+
+/* smiley grid background, lowered brightness */
+.project1 {
+	background-image: url(/img/smiley.png);
+	background-size: cover;
+	filter: brightness(80%);
+	color: black;
+}
+
+
+/* change anchor tag for project1 */
+.project1 a {
+	color: black;
+}
+
+.project1 a:hover {
+	color: hotpink;
+}
+
+.project1 a:visited {
+	color: black;
+}
+
+/* placeholder */
+.project2 {
+	background-color: grey;
+}
+
+/* placeholder */
+.project3 {
+	background-color: grey;
+}
+
+
+/* main flex box for personal section */
+.personal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: auto;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: rgba(255, 255, 255, 0.875);
+	display: flex;
+	font-family: 'Kanit', sans-serif;
+	flex-wrap: nowrap;
+}
+
+/* decided width of the blank space, acts as padding */
+.black-space-left {
+	align-self: flex-start;
+	width: 10%;
+	height: 100%;
+	background-color: red;
+}
+
+/* CHANGE THIS TO A GRID */
+.personal-info {
+	align-self: auto;
+	/* width: 60%; */
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 2em;
+	flex-wrap: wrap;
+}
+
+/* POSSIBLY REMOVE */
+.personal-info-blank-top {
+	width: auto;
+	height: 10%;
+}
+
+.hiking {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+}
+
+/* change size of SVG images */
+.personal-info svg {
+	width: 4em;
+}
+
+.football {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+}
+
+.running {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+}
+
+.traveling {
+	display: flex;
+	align-items: center;
+	gap: 2em;	
+}
+
+.personal-info-blank-bottom {
+	width: auto;
+	height: 10%;
+}
+
+/* change size of image */
+.img-right {
+	align-self: flex-end;
+	width: 40em;
+	height: 100%;
+}
+
+/* alter footer css */
+footer {
+	background-color: rgba(0, 0, 0, 0.85);
+	color: rgba(255, 255, 255, 0.875);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

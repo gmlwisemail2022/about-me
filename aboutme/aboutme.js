@@ -111,6 +111,10 @@ function expLabelFunction(value)
     }
 }
 
+var allDiv = document.getElementsByTagNames("pdiv"); 
+console.log(allDiv);
+
+
 /*
 Function showone() is used to show a list of items on the textbox when user clicks the images/ logos
 Type 2: do not pass a value to the function; show text depending on the function called

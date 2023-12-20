@@ -12,21 +12,35 @@ About Me page is divided into X sections:
 /* general styles starts here*/
 
 body {
-
    background-image: url("logo/background2.jpg");
 }
 
-
+/*
 .halfPage1 {
-    background-color: rgb(221, 219, 219); 
-    opacity: 0.9;
-}
+    /* background-color: rgb(221, 219, 219); */
+    /*: 0.3; */
 
 
 .halfPage2 {
     background-color: whitesmoke; 
     opacity: 0.8;
 }
+
+/*
+.nav {
+    color: silver !important ;
+    font-size: xx-large !important ;
+    text-decoration: none !important;
+
+}
+*/
+
+.nav-link {
+    font-size:x-large;
+    font-weight: bold;
+
+}
+
 
 .mainHead {
     color: skyblue;
@@ -62,10 +76,12 @@ body {
 
 /* About Me section starts here*/
 .aboutMeMain {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    height: 1800px;
+    height: 1800px; 
     min-width: 0;
+    left: 10%;
+    position: relative;
 
 }
 
@@ -73,7 +89,8 @@ body {
 .sectionFlex {
     display: inline-flex;
     height: 26%;
-    width: 100%;
+    left: 50%;
+    width: 80%;
     box-sizing: border-box;
 
 }
@@ -89,19 +106,25 @@ body {
     padding: 2%;
     justify-content: center;
     text-emphasis-position: center;
-    width: 70%;
+    width: 60%;
     box-sizing: border-box;
+    border: 5px solid black;
+    border-radius: 25px;
     font-size: min(1.8em, 3vw);
+    font-family: Helvetica;
     min-width: 0;
     flex: 1 1 0;
+
 }
 .sub-section2 {
     background-color: rgb(65, 146, 226);    
     width: 30%;
     position: relative;
     border: 5px solid black;
+    border-radius: 25px;
     justify-content:center;
     box-sizing: border-box;
+    padding-bottom: 10px;
 }
 
 
@@ -114,70 +137,80 @@ body {
 
 
 .aboutMePix {
-    height: 80%;
-    width: 80%;
+    height: 75%;
+    width: 75%;
     left :10%;
     object-fit: cover;
     margin-bottom: 10%;
     position: relative;
     box-sizing: border-box;
+    overflow:hidden;
 }
 
 
 /* Skills section starts here*/
-
-
-/* skills bar testing */
-.chart-wrap {
-    width: 300px;
-    height: 300px;
-    font-family:sans-serif;
-  }
-
-  .grid{
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    border-bottom:2px solid #35f16d;
-
-  } 
-    
-  .bar {
-    background-color:#52a4c7;
-    color: rgb(17, 16, 16);
-    width: 80px;
-    height: var(--bar-value);
-    align-self:flex-end;
-    border-radius:3px 3px 0 0;
-    position:relative;
-    font-weight: bold;
-    font-size: large;
-  }  
-    
-  .bar:hover {
-    opacity: 0.7;
-  }
-      
 
 .skillsMain {
     box-sizing: border-box;
     position: relative;
 }
 
+.skillsSet {
+    display: flex;
+    flex-direction: row;
+}
 
 .skillsLabel
 {
-    display: inline-flex;
+    /* display: inline-flex;   comment for now while fixing uncomment to sa submitted*/
     width: 17%;
-    font-size: larger;
+    font-size: xx-large;
     text-align: justify;
     direction:rtl;
     text-decoration:underline; 
     font-weight: bold;
-    /* background-color: silver; */
+    color: greenyellow;
 }
+
+
+.chart-wrap {
+    width: 50%;
+    height: 200px;
+    font-family:sans-serif;
+    /* justify-content:center; uncomment when submitted*/ 
+    /* background: red; */
+  }
+
+  .grid{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    
+    border-left:2px solid #35f16d;
+
+  } 
+    
+  .bar {
+    background-color:#100655;
+    color: rgb(215, 210, 210);
+    width: 80px;
+    /* for vertical bar graph */
+    /* height: var(--bar-value);  uncomment when submitted */
+    /* align-self:flex-end; uncomment when submitted */
+    /* for horizontal bar graph*/
+        width: var(--bar-value);
+        align-self:flex-start;
+        margin: 2px;
+    border-radius:3px 3px 0 0;
+    position:relative;
+    font-weight: bold;
+    font-size: x-large;
+  }  
+    
+  .bar:hover {
+    opacity: 0.7;
+  }
 
 .skillsBox1
 {
@@ -238,7 +271,7 @@ li {
 
 /* css for image inside the outer box */
 
-.skillsSet {
+.experienceSet {
     display: flex;
     flex-direction: row;
 }
@@ -349,6 +382,7 @@ li {
 .hobbiesPix:hover {
     border-radius: 10px;
     transform: scale(1.2);
+    transition: 3s;    /* time delay in scaling the image */
 }
 
 .hobbiesText {
@@ -380,6 +414,7 @@ li {
     border-radius: 10px;
     transform: scale(1.5);
     object-fit: fill;
+    transition: 3s;    /* time delay in scaling the image */
 }
 
 
@@ -415,7 +450,6 @@ li {
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 6;
-    margin-right: -35px; 
     margin-bottom: -10px;  
 }
 
