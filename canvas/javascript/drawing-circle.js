@@ -13,14 +13,14 @@ class DrawingCircle extends PaintFunction {
     }
   
     onMouseDown(coord, event) {
-      this.contextReal.fillStyle = "#f44";
+      this.contextDraft.fillStyle = hex.value;
       this.origX = coord[0];
       this.origY = coord[1];
     }
   
     onDragging(coord, event) {
       // Manipulating the context draft
-      this.contextDraft.fillStyle = "#f44";
+      this.contextDraft.fillStyle = hex.value;
       // Allows you to actually draw out your squares
       this.contextDraft.clearRect(
         0,
@@ -32,18 +32,18 @@ class DrawingCircle extends PaintFunction {
     // calculate the circle radius based on starting vs current mouse position
         var cradius = Math.abs(coord[0] - this.origX) ;
 
-   // draw a new rect from the start position 
+   // draw a new circle from the start position 
    // to the current mouse position
         this.contextDraft.beginPath();
-        this.contextDraft.lineWidth = 3;
+        this.contextDraft.lineWidth = width.value;
         this.contextDraft.lineJoin = this.contextDraft.lineCap = 'round';
         this.contextDraft.setLineDash([0, 0]);
         this.contextDraft.globalAlpha = 1.0;
 
-        this.contextDraft.strokeStyle = 'red';
+        this.contextDraft.strokeStyle = hexB.value;
         this.contextDraft.arc(this.origX, this.origY, cradius, 0, 2 * Math.PI, false);
 
-        this.contextDraft.fillStyle = 'rgba(25,50,75,0.5)';
+        this.contextDraft.fillStyle = hex.value;
         this.contextDraft.fill();
         this.contextDraft.stroke();
     }
@@ -71,23 +71,22 @@ class DrawingCircle extends PaintFunction {
        var cradius = Math.abs(coord[0] - this.origX) ;
 
        this.contextReal.beginPath();
-       this.contextReal.lineWidth = 3;
+       this.contextReal.lineWidth = width.value;
        this.contextReal.lineJoin = this.contextReal.lineCap = 'round';
        this.contextReal.setLineDash([0, 0]);
        this.contextReal.globalAlpha = 1.0;
 
-       this.contextReal.strokeStyle = 'red';
+
+       this.contextReal.strokeStyle = hexB.value;
        this.contextReal.arc(this.origX, this.origY, cradius, 0, 2 * Math.PI, false);
 
-       this.contextReal.fillStyle = 'rgba(25,50,75,0.5)';  /*change later dpending on user input fill color */
+       this.contextReal.fillStyle = hex.value; 
        this.contextReal.fill();
        this.contextReal.stroke();
 
       // Save the drawing into the array for future modification //
       SaveNewImage();
    }
-
-
 
     onMouseLeave() {}
     onMouseEnter() {}

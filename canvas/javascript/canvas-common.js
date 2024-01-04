@@ -61,21 +61,7 @@ class PaintFunction {
   onMouseLeave() {}
   onMouseEnter() {}
 }
-/*
-/* Drawings Class - for storage 
-class Drawings {
-  constructor (typeFunction,origX, origY, coordX, coordY,strokeStyle, fillStyle, lineWidth ) {
-    this.typeFunction = typeFunction;
-    this.origX = origX;
-    this.origY = origY;
-    this.coordX = coordX;
-    this.coordY = coordY;
-    this.strokeStyle = strokeStyle;
-    this.fillStyle = fillStyle;
-    this.lineWidth = lineWidth;
-  }
-}
-*/
+
 /* RemoveImage and SaveImage is for the undo/redo function only */
 function RemoveImage () {
   var imgSrc = canvasReal.toDataURL("image/png");

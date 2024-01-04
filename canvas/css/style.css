@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
 .canvas {
   border: 1px black dotted;
   position: absolute;
@@ -15,4 +17,70 @@ body {
 }
 #canvas-container {
   height: 720px;
+}
+
+
+/* for sliders */
+
+.sliders {
+  display:flex;
+  padding: 5px;
+}
+
+#hexCode {
+  background-color: rgb(0,0,0);
+}
+
+fieldset{
+  border: none;
+}
+output{
+  display: inline-block;
+  min-width: 2.5em;
+}
+label, output{
+  padding: 2px 9px;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-size: 1.1em;
+}
+label[for=r], output[for=r]{
+  background-color: #f00;
+}
+label[for=g], output[for=g]{
+  background-color: #0f0;
+}
+label[for=b], output[for=b]{
+  background-color: #00f;
+}
+
+#hexCodeB{
+  background-color: rgb(0,0,0);
+}
+
+label[for=rb], output[for=rb]{
+  background-color: #f00;
+}
+label[for=gb], output[for=gb]{
+  background-color: #0f0;
+}
+label[for=bb], output[for=bb]{
+  background-color: #00f;
+}
+
+#hex{
+  min-width: 3.5em;
+  font-size: 1em;
+  background: rgba(255,255,255,.1);
+  text-align: center;
+  width:17%;
+}
+
+#hexB{
+  min-width: 3.5em;
+  font-size: 1em;
+  background: rgba(255,255,255,.1);
+  text-align: center;
+  width:17%;
 }

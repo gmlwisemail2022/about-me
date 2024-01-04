@@ -13,14 +13,15 @@ class DrawingRectangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "#f44";
+    this.contextDraft.fillStyle = hex.value;
     this.origX = coord[0];
     this.origY = coord[1];
   }
 
   onDragging(coord, event) {
     // Manipulating the context draft
-    this.contextDraft.fillStyle = "#f44";
+    this.contextDraft.fillStyle = hex.value;
+
     // Allows you to actually draw out your squares
     this.contextDraft.clearRect(
       0,
@@ -28,13 +29,24 @@ class DrawingRectangle extends PaintFunction {
       canvasDraft.width,
       canvasDraft.height
     );
+  
+    //this.contextDraft.strokeStyle = hexB.value;
     // Pass in the original x and y coordinates, followed by the new coordinates that we get for position x and y
-    this.contextDraft.fillRect(
+    this.contextDraft.beginPath();
+    this.contextDraft.lineWidth = width.value;
+    this.contextDraft.strokeStyle = hexB.value;
+
+    this.contextDraft.rect(
       this.origX,
       this.origY,
       coord[0] - this.origX,
       coord[1] - this.origY
     );
+
+    this.contextDraft.stroke();
+    this.contextDraft.fillStyle = hex.value;
+    this.contextDraft.fill();
+
   }
 
   onMouseMove() {}
@@ -54,12 +66,21 @@ class DrawingRectangle extends PaintFunction {
 
     // Commit that drawing to context real
     // Without this commit, it won't actually draw
-    this.contextReal.fillRect(
+    this.contextReal.beginPath();
+    this.contextReal.lineWidth = width.value;
+
+    this.contextReal.strokeStyle = hexB.value;
+
+    this.contextReal.rect(
       this.origX,
       this.origY,
       coord[0] - this.origX,
       coord[1] - this.origY
     );
+    this.contextReal.fillStyle = hex.value;
+    this.contextReal.stroke();
+    this.contextReal.fill();
+
 
     // Save the drawing into the array for future modification //
     SaveNewImage();
