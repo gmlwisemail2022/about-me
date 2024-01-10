@@ -27,32 +27,65 @@
         height="720px"
       ></canvas>
     </div>
+    <div class="container">
     <div class="buttons">
       <!-- The drawing rectangle button  -->
-      <span class="btn btn-primary fa-square" id="drawing-rectangle"
-        >Draw Rectangle</span
-      >
+      <span title = "rectangle" class = "btn btn-primary" id="drawing-rectangle">
+      <img alt="rectangle" src="images/icons8-rectangular-24.png"
+      ></span>
       <!-- The drawing triangle button  -->
-      <span class="btn btn-primary fa-triangle" id="drawing-triangle"
-        >Draw Triangle</span
-      >
+      <span title = "triangle" class="btn btn-primary " id="drawing-triangle">
+      <img alt="triangle" src="images/icons8-triangle-24.png"
+      ></span>
       <!-- The drawing circle button  -->
-      <span class="btn btn-primary fa-circle" id="drawing-circle"
-        >Draw Circle</span
-      >
+      <span title = "circle" class="btn btn-primary" id="drawing-circle">
+      <img alt="triangle" src="images/icons8-circle-24.png"
+      ></span>
+      <!-- The drawing ellipse button  -->
+      <span title = "ellipse" class="btn btn-primary" id="drawing-ellipse">
+      <img alt="triangle" src="images/icons8-ellipse-24.png"
+      ></span>
       <!-- The drawing line button  -->
-      <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
-        >Draw Line</span
-      > 
+      <span title = "line" class="btn btn-primary" id="drawing-line">  
+      <img alt="line" src="images/icons8-line-24.png"
+      ></span>
+      <!-- The drawing curve1 button  -->
+      <span title = "art style filled" class="btn btn-primary" id="drawing-curve">   <!-- fa fa-paint-brush-->
+      <img alt="art" src="images/icons8-art-30.png"
+      ></span>
+      <!-- The drawing curve2 button  -->
+      <span title = "art style twist" class="btn btn-primary" id="drawing-curve2">   <!-- fa fa-paint-brush-->
+      <img alt="twist" src="images/icons8-twist-30.png"
+      ></span>
+      <!-- The drawing curve3 button  -->
+      <span title = "curve" class="btn btn-primary" id="drawing-curve3">   <!-- fa fa-paint-brush-->
+      <img alt="curve" src="images/icons8-u-24.png"
+      ></span>
+      <!-- The drawing drag button  -->
+      <span title = "drag" class="btn btn-primary" id="drawing-drag">   
+      <img alt="drag" src="images/icons8-drag-24.png"
+      ></span>
       <!-- The save button  -->
-      <span class="btn btn-info fa" download="YourFileName.jpg" id="drawing-save"
-      >Save</span
-      >
+      <span title = "download" class="btn btn-primary" download="YourFileName.jpg" id="drawing-save">
+      <img alt="save" src="images/icons8-save-30.png"
+      ></span> 
       <!-- The undo button  -->
-      <span class="btn btn-info fa" id="drawing-undo"
-      >Undo</span> 
-
-            <!-- color slider for fill-->
+      <span title = "undo" class="btn btn-primary" id="drawing-undo">
+      <img alt="undo" src="images/icons8-undo-30.png"
+      ></span> 
+      <!-- The redo button  -->
+      <span title = "redo" class="btn btn-primary" id="drawing-redo">
+      <img alt="redo" src="images/icons8-redo-30.png"
+      ></span> 
+      <!-- The clear button  -->
+      <span title = "clear screen" class="btn btn-primary" id="drawing-clear">
+      <img alt="clear" src="images/icons8-clear-30.png"
+      ></span> 
+            <!-- The play gravity button  -->
+            <span title = "gravity (Warning - breaks the canvas!)" class="btn btn-info fa" id="gravity-on"
+            >Gravity On</span>  <!-- note: needs to fix this function to stop animation so canvas could be restored-->
+      <!-- color slider for fill-->
+      </div>
       <div class="sliders">
       <div class="colorSliders"> Fill Color
         <fieldset>
@@ -74,7 +107,7 @@
         </fieldset>  
         
         <span id="hexCode">
-          <output id="hex" >#000000</output>
+          <output id="hex">#000000</output>
         </span>
       </div>
       <!-- color slider for border-->
@@ -124,14 +157,11 @@
     <link href="css/evol.colorpicker.min.css" rel="stylesheet">
     <script src="js/evol.colorpicker.min.js"></script>
     -->
+    <!-- font awesome - icons -->
+    <script src="https://kit.fontawesome.com/852f6f11cc.js" crossorigin="anonymous"></script>
     <!-- The drawing functionality  -->
     <script
       src="./javascript/canvas-common.js"
-      type="text/javascript"
-    ></script>
-    <!-- The drawing line functionality  -->
-    <script
-      src="./javascript/drawing-line.js"
       type="text/javascript"
     ></script>
     <!-- The drawing rectangle functionality  -->
@@ -149,6 +179,34 @@
     src="./javascript/drawing-circle.js"
     type="text/javascript"
     ></script>
+    <!-- The drawing ellipse functionality  -->
+    <script
+    src="./javascript/drawing-ellipse.js"
+    type="text/javascript"
+    ></script>
+    <!-- The drawing line functionality  -->
+    <script
+    src="./javascript/drawing-line.js"
+    type="text/javascript"
+    ></script>
+    <!-- The drawing line functionality  -->
+    <script
+    src="./javascript/drawing-curve.js"
+    type="text/javascript"
+    ></script>
+    <script
+    src="./javascript/drawing-curve2.js"
+    type="text/javascript"
+    ></script>
+    <script
+    src="./javascript/drawing-curve3.js"
+    type="text/javascript"
+    ></script>
+    <!-- The drawing drag functionality  -->
+    <script
+    src="./javascript/drawing-drag.js"
+    type="text/javascript"
+  ></script>
     <!-- The drawing save functionality  -->
     <script
     src="./javascript/drawing-save.js"
@@ -157,6 +215,21 @@
     <!-- The drawing undo functionality  -->
     <script
     src="./javascript/drawing-undo.js"
+    type="text/javascript"
+    ></script>
+    <!-- The drawing redo functionality  -->
+    <script
+    src="./javascript/drawing-redo.js"
+    type="text/javascript"
+    ></script>
+    <!-- The drawing clear functionality  -->
+    <script
+    src="./javascript/drawing-clear.js"
+    type="text/javascript"
+    ></script>
+    <!-- The gravity functionality  -->
+    <script
+    src="./javascript/gravity-on.js"
     type="text/javascript"
     ></script>
     <!-- The color slider functionality  -->
@@ -168,22 +241,62 @@
     $(()=>{
       currentFunction =  new DrawingLine(contextReal)
       $("#drawing-rectangle").click(() => {
+        moveImage = false;
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
       });
       $("#drawing-triangle").click(() => {
+        moveImage = false;
         currentFunction = new DrawingTriangle(contextReal, contextDraft);
       });
       $("#drawing-circle").click(() => {
+        moveImage = false;
         currentFunction = new DrawingCircle(contextReal, contextDraft);
       });
+      $("#drawing-ellipse").click(() => {
+        moveImage = false;
+        currentFunction = new DrawingEllipse(contextReal, contextDraft);
+      });
       $("#drawing-line").click(() => {
+        moveImage = false;
         currentFunction = new DrawingLine(contextReal);
       });  
+      $("#drawing-curve").click(() => {
+        moveImage = false;
+        currentFunction = new DrawingCurve(contextReal);
+      });  
+      $("#drawing-curve2").click(() => {
+        moveImage = false;
+        currentFunction = new DrawingCurve2(contextReal, contextDraft);
+      });  
+      $("#drawing-curve3").click(() => {
+        moveImage = false;
+        currentFunction = new DrawingCurve3(contextReal, contextDraft);
+      });  
+      $("#drawing-drag").click(() => {
+        // set drag switch to true
+        moveImage = true;
+        currentFunction = new DrawingDrag(contextReal, contextDraft);
+        // DrawingDrag();
+      }); 
       $("#drawing-save").click(() => {
         SaveCanvas();
       }); 
       $("#drawing-undo").click(() => {
         UndoCanvas();
+      });
+      $("#drawing-redo").click(() => {
+        RedoCanvas();
+      });
+      $("#drawing-clear").click(() => {
+        ClearCanvas();
+      });
+      $("#gravity-on").click(() => {
+          GravityOn();
+        // Save the drawing into the array for future modification 
+        SaveNewImage();
+      });
+      $("#drawing-rectangle").mouseenter(() => {
+
       });
     });
     </script>

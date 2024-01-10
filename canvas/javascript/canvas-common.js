@@ -8,11 +8,40 @@ let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
+//canvas values:
+var BB = canvasDraft.getBoundingClientRect();
+var offsetX = BB.left;
+var offsetY = BB.top;
+//var WIDTH = canvas.width;
+//var HEIGHT = canvas.height;
+//switches
 let dragging = false;
-var undoDrawing = false;
+var undoDrawing = false; // undo button toggle
+var redoDrawing = false; // redo button toggle
+var redoEmpty = true;
+var moveImage = false;  //drag button toggle
+// arrays
 var savedImages = [];
 var removedImages = [];
 let drawingsArray = [];  /*this array stores all shapes created in contextReal */
+// temp gravity
+var savedCoord = [];
+var startX = 0;
+var startY = 0;
+var endX = 0;
+var endY = 0;
+// initial variables
+var hit = -1;    // switch to check if object was hit on click
+var diffX = 0;
+var diffY = 0;
+var newStartX = 0;
+var newStartY = 0;
+var drawnObject = { 
+  shape: "rectangle",
+  pos: [startX, startY],
+  endPos: {endX, endY}
+};
+
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
@@ -62,11 +91,19 @@ class PaintFunction {
   onMouseEnter() {}
 }
 
-/* RemoveImage and SaveImage is for the undo/redo function only */
+// RemoveImage and SaveImage is for the undo/redo function only 
 function RemoveImage () {
   var imgSrc = canvasReal.toDataURL("image/png");
   removedImages.push(imgSrc);
 };
+
+function SaveImage () {
+  var imgSrc = canvasReal.toDataURL("image/png");
+  savedImages.push(imgSrc);
+};
+
+
+// saveNewImage and saveldImage is function to control undo/redo and create object toggle
 
 function SaveNewImage() {
     // Save the drawing into the array for future modification 

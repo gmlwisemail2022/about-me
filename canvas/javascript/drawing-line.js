@@ -18,12 +18,12 @@ class DrawingLine extends PaintFunction {
 
     // if creating new shapes after undo, need to save old canvas first because old canvas already popped out!
     SaveOldImage();
-    // Fill in the color
-    this.context.strokeStyle = "#df4b26";
+    // Stroke color
+    this.context.strokeStyle = hex.value;
     // Kind of line
     this.context.lineJoin = "round";
     // Width of line
-    this.context.lineWidth = 5;
+    this.context.lineWidth = width.value;
     // Drawing the line here
     this.context.beginPath();
     this.context.moveTo(coord[0], coord[1]);
@@ -46,6 +46,7 @@ class DrawingLine extends PaintFunction {
     //
     this.context.lineTo(x, y);
     // Draw the line onto the page
+    this.context.strokeStyle = hex.value;
     this.context.stroke();
   }
 }

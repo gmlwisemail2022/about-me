@@ -6,7 +6,6 @@
  * Undo button not functional when there is no drawing to undo.
  ***********************************************/
 
-
 function UndoCanvas() {   
     console.log('Undo CANVAS button clicked!');
     //save the current canvas in redo array
@@ -36,5 +35,7 @@ function UndoCanvas() {
     imageObj.onload = function() {
         contextReal.drawImage(imageObj, 0, 0);
     };
+
+    // remove the last saved instance from the array
     imageObj.src = savedImages.pop();
 };

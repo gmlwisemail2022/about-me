@@ -60,7 +60,7 @@ class DrawingRectangle extends PaintFunction {
       canvasDraft.width,
       canvasDraft.height
     );
-
+    
     /* if creating new shapes after undo, need to save old canvas first because old canvas already popped out! */
     SaveOldImage();
 
@@ -80,6 +80,25 @@ class DrawingRectangle extends PaintFunction {
     this.contextReal.fillStyle = hex.value;
     this.contextReal.stroke();
     this.contextReal.fill();
+
+        // temp: Save the drawing into the array for gravity effects //
+       startX = this.origX;
+       startY = this.origY;
+       endX = coord[0];
+       endY = coord[1];
+       var rectangleWidth = coord[0] - this.origX;
+       var rectangleHeight = coord[1] - this.origY;
+       drawnObject = { 
+        shape: "rectangle",
+        pos: [startX, startY],
+        endPos: [endX, endY],
+        width: rectangleWidth,
+        height: rectangleHeight,
+        fillStyle: hex.value,
+        strokeStyle: hexB.value,
+        lineWidth: width.value
+      };
+      savedCoord.push(drawnObject);
 
 
     // Save the drawing into the array for future modification //
